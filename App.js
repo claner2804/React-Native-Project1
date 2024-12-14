@@ -31,8 +31,15 @@ export default function App() {
       <Category
         categoryHeader1="Einnahmen"
         percentageText1="100%"
-        categoryHeader2="Ausgaben"
+        circleColor1="#B266FF"
+
+        categoryHeader2="Ersparnisse"
         percentageText2="100%"
+        circleColor2="#FF99FF"
+
+        categoryHeader3="Ausgaben"
+        percentageText3="100%"
+        circleColor3="#FF9C50"
       />
 
       {/* Bild */}
@@ -95,6 +102,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 5,
     width: 350,
     marginTop: 20,
+    borderRadius: 20,  // Abgerundete Ecken
   },
 
   //Container für das Bild

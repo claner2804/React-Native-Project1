@@ -6,7 +6,12 @@ export function Category(props) {
       {/* Einnahmen */}
       <View style={styles.categoryItem}>
         <Text style={styles.categoryHeader}>{props.categoryHeader1}</Text>
-        <View style={styles.percentageContainer}>
+        <View
+          style={[
+            styles.percentageContainer,
+            { backgroundColor: props.circleColor1 }, // Dynamische Farbe für den Kreis
+          ]}
+        >
           <Text style={styles.percentageText}>{props.percentageText1}</Text>
         </View>
       </View>
@@ -14,11 +19,33 @@ export function Category(props) {
       {/* Ausgaben */}
       <View style={styles.categoryItem}>
         <Text style={styles.categoryHeader}>{props.categoryHeader2}</Text>
-        <View style={styles.percentageContainer}>
+        <View
+          style={[
+            styles.percentageContainer,
+            { backgroundColor: props.circleColor2 }, // Dynamische Farbe für den Kreis
+          ]}
+        >
           <Text style={styles.percentageText}>{props.percentageText2}</Text>
         </View>
       </View>
+
+
+       {/* Erspartes */}
+       <View style={styles.categoryItem}>
+        <Text style={styles.categoryHeader}>{props.categoryHeader3}</Text>
+        <View
+          style={[
+            styles.percentageContainer,
+            { backgroundColor: props.circleColor3 }, // Dynamische Farbe für den Kreis
+          ]}
+        >
+          <Text style={styles.percentageText}>{props.percentageText3}</Text>
+        </View>
+      </View>
+
     </View>
+
+    
   );
 }
 
@@ -39,8 +66,8 @@ const styles = StyleSheet.create({
 
   // Text für die Kategorie-Header (Einnahmen/Ausgaben)
   categoryHeader: {
-    fontSize: 18,
-    fontWeight: '400',
+    fontSize: 16,
+    fontWeight: '500',
     color: '#4B0082',
     textAlign: 'center',
     marginBottom: 10,
@@ -48,7 +75,6 @@ const styles = StyleSheet.create({
 
   // Kreisförmiger Container für die Prozentangabe
   percentageContainer: {
-    backgroundColor: '#B266FF',
     borderRadius: 30,
     width: 60,
     height: 60,
