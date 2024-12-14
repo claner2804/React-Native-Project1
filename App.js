@@ -27,26 +27,13 @@ export default function App() {
       {/* Trennlinie unter dem Text */}
       <View style={styles.sectionUnderline} />
 
-
-     {/* Kategorien mit Prozentangaben */}
-     <View style={styles.categoryContainer}>
-        {/* Einnahmen */}
-        <View style={styles.categoryItem}>
-          <Text style={styles.categoryHeader}>Einnahmen</Text>
-          <View style={styles.percentageContainer}>
-            <Text style={styles.percentageText}>50%</Text>
-          </View>
-        </View>
-
-        {/* Ausgaben */}
-        <View style={styles.categoryItem}>
-          <Text style={styles.categoryHeader}>Ausgaben</Text>
-          <View style={styles.percentageContainer}>
-            <Text style={styles.percentageText}>100%</Text>
-          </View>
-        </View>
-
-      </View>
+      {/* Kategorien */}
+      <Category
+        categoryHeader1="Einnahmen"
+        percentageText1="100%"
+        categoryHeader2="Ausgaben"
+        percentageText2="100%"
+      />
 
       {/* Bild */}
       <View style={styles.imageContainer}>
@@ -108,51 +95,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: 5,
     width: 350,
     marginTop: 20,
-  },
-
-  //Container für die Kategorien (Einnahmen, Ausgaben)
-  categoryContainer: {
-    flexDirection: 'row', // horizontal nebeneinander
-    justifyContent: 'space-between',
-    width: 350,
-    marginTop: 20,
-  },
-
-  // Vertikaler Container für eine Kategorie (z. B. Einnahmen oder Ausgaben)
-  categoryItem: {
-    alignItems: 'center', // Zentriert die Inhalte vertikal (Text und Prozentangaben)
-  },
-
-
-  //Kategorie-Header (Einnahmen, Ausgaben)
-  categoryHeader: {
-    fontSize: 18,
-    fontWeight: '400',
-    color: '#4B0082',
-    textAlign: 'center', 
-    marginTop: 20,
-    marginBottom: 15, // Abstand nach unten
-  },
-  
-  //Container für die Prozentangabe
-  percentageContainer: {
-    backgroundColor: '#B266FF',
-    borderRadius: 30,
-    width: 60,
-    height: 60,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
-  //Prozentangabe text
-  percentageText: {
-    // 50% und 100% als Beispiel sollen später dynamisch berechnet werden 
-    //sie sollen unter einnahmen und ausgaben stehen
-    fontSize: 18,
-    fontWeight: '400',
-    color: '#fff',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
   },
 
   //Container für das Bild
