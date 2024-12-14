@@ -1,12 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import { Dimensions } from 'react-native';
+import { Category } from './components/Category';
 const { height } = Dimensions.get('window');
+
+
 
 export default function App() {
   return (
     //Hauptcontainer der App
     <View style={styles.container}>
+      
 
       {/* Header */}
       <Text style = {styles.header}>Budget Planer </Text>
@@ -41,6 +45,16 @@ export default function App() {
             <Text style={styles.percentageText}>100%</Text>
           </View>
         </View>
+
+      </View>
+
+      {/* Bild */}
+      <View style={styles.imageContainer}>
+        <Image 
+          style={styles.image}
+          source={{
+            uri: 'https://cdn-icons-png.flaticon.com/512/9462/9462711.png',
+          }} />
       </View>
 
     </View>
@@ -122,10 +136,10 @@ const styles = StyleSheet.create({
   
   //Container für die Prozentangabe
   percentageContainer: {
-    backgroundColor: '#fff',
-    borderRadius: 20,
-    width: 50,
-    height: 50,
+    backgroundColor: '#B266FF',
+    borderRadius: 30,
+    width: 60,
+    height: 60,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -136,9 +150,22 @@ const styles = StyleSheet.create({
     //sie sollen unter einnahmen und ausgaben stehen
     fontSize: 18,
     fontWeight: '400',
-    color: '#4B0082',
+    color: '#fff',
     flexDirection: 'row',
     justifyContent: 'space-between',
+  },
+
+  //Container für das Bild
+  imageContainer: {
+    alignItems: 'center',
+    marginTop: 50,
+  },
+
+  //Bild
+  image: {
+    width: 300,  // Setzt eine feste Breite
+    height: 250, // Setzt eine feste Höhe
+    resizeMode: 'contain', // Bild an den Container anpassen
   },
 
 });
