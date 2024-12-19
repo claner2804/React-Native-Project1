@@ -5,9 +5,9 @@ export function Category(props) {
     <TouchableOpacity 
     activeOpacity={0.4} 
     style={[styles.categoryContainer, props.style]}
-    onPress={() => {
-      console.log(`Kategorie ${props.categoryHeader} wurde ausgewählt`);
-    }}
+
+    onPress={() => props.onPress && props.onPress(props.categoryHeader)}
+
     >
       
       

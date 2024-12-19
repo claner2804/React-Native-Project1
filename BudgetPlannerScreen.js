@@ -7,7 +7,7 @@ import { Card } from "./components/Card";
 import { categoriesData } from "./data/Data";
 const { height } = Dimensions.get("window");
 
-export function BudgetPlannerScreen() {
+export function BudgetPlannerScreen({onCategorySelect}) {
   return (
     //Hauptcontainer der App
     <View style={styles.container}>
@@ -41,6 +41,7 @@ export function BudgetPlannerScreen() {
                 categoryHeader={category.categoryHeader}
                 percentageText={category.percentageText}
                 circleColor={category.circleColor}
+                onPress={() => onCategorySelect(category)}
               />
             </Card>
           ))}
