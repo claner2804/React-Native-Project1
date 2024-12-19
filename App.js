@@ -28,6 +28,10 @@ export default function App() {
     setSelectedCategory(categoriesData[index]);
   }
 
+  function handleBackPress() {
+    setSelectedCategory(null);
+  }
+
   return (
     <SafeAreaView style={styles.screenContainer}>
       {selectedCategory === null ? (
@@ -38,6 +42,7 @@ export default function App() {
           categoryHeader={selectedCategory.categoryHeader}
           percentageText={selectedCategory.percentageText}
           circleColor={selectedCategory.circleColor}
+          onBackPress={handleBackPress}
         />
       )}
     </SafeAreaView>

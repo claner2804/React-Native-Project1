@@ -7,7 +7,7 @@ export function Card({ children, style }) {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: "#fff", //Hintergrund zum Debuggen
+    // backgroundColor: "#fff", //Hintergrund zum Debuggen
     padding: 10,
     borderRadius: 15,
     margin: 5,

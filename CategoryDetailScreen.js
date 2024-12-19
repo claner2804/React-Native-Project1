@@ -1,10 +1,11 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 
 export function CategoryDetailScreen({
   id,
   categoryHeader,
   percentageText,
   circleColor,
+  onBackPress,
 }) {
   const incomeDetails = [
     { id: 1, source: "Gehalt", amount: "1048 €" },
@@ -20,6 +21,11 @@ export function CategoryDetailScreen({
 
   return (
     <View style={styles.container}>
+
+      <TouchableOpacity onPress={onBackPress } style={styles.backButton}>
+        <Text style={styles.backButtonText} >Zurück</Text>
+      </TouchableOpacity>
+
       {/* Bild */}
       <View style={styles.ImageContainer}>
         <Image
@@ -72,6 +78,17 @@ const styles = StyleSheet.create({
     backgroundColor: "#E5CCFF",
     alignItems: "center",
     paddingTop: 20,
+  },
+
+  backButton: {
+    position: "absolute",
+    top: 20,
+    left: 20,
+  },
+
+  backButtonText: {
+    fontSize: 16,
+    color: "#4B0082",
   },
 
   image: {
