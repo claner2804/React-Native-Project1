@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, Button } from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 
 export function CategoryDetailScreen({
   id,
@@ -12,8 +12,11 @@ export function CategoryDetailScreen({
     { id: 3, source: "Sonstige", amount: "12 €" },
   ];
 
-// Gesamtsumme berechnen und sicherstellen, dass amount als Zahl behandelt wird
-const totalIncome = incomeDetails.reduce((sum, item) => sum + parseFloat(item.amount), 0);
+  // Gesamtsumme berechnen und sicherstellen, dass amount als Zahl behandelt wird
+  const totalIncome = incomeDetails.reduce(
+    (sum, item) => sum + parseFloat(item.amount),
+    0
+  );
 
   return (
     <View style={styles.container}>

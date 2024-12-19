@@ -1,9 +1,17 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
 export function Category(props) {
   return (
-    <View style={styles.categoryContainer}>
-      {/* Einnahmen */}
+    <TouchableOpacity 
+    activeOpacity={0.4} 
+    style={[styles.categoryContainer, props.style]}
+    onPress={() => {
+      console.log(`Kategorie ${props.categoryHeader} wurde ausgewählt`);
+    }}
+    >
+      
+      
+      {/* Kategorien */}
       <View style={styles.categoryItem}>
         <Text style={styles.categoryHeader}>{props.categoryHeader}</Text>
         <View
@@ -15,33 +23,30 @@ export function Category(props) {
           <Text style={styles.percentageText}>{props.percentageText}</Text>
         </View>
       </View>
-
-    </View>
-
-    
+    </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
   // Container für die horizontalen Kategorien (Einnahmen & Ausgaben)
   categoryContainer: {
-    flexDirection: 'row', // Kategorien nebeneinander
-    justifyContent: 'space-between', // Abstand zwischen Kategorien
-    alignItems: 'center',
+    flexDirection: "row", // Kategorien nebeneinander
+    justifyContent: "space-between", // Abstand zwischen Kategorien
+    alignItems: "center",
     marginTop: 5,
   },
 
   // Vertikaler Container für eine einzelne Kategorie
   categoryItem: {
-    alignItems: 'center', // Zentriert Text und Prozentkreis vertikal
+    alignItems: "center", // Zentriert Text und Prozentkreis vertikal
   },
 
   // Text für die Kategorie-Header (Einnahmen/Ausgaben/Ersparnisse)
   categoryHeader: {
     fontSize: 15,
-    fontWeight: '400',
-    color: '#4B0082',
-    textAlign: 'center',
+    fontWeight: "400",
+    color: "#4B0082",
+    textAlign: "center",
     marginBottom: 10,
   },
 
@@ -50,14 +55,14 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     width: 60,
     height: 60,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
 
   // Text für die Prozentangabe
   percentageText: {
     fontSize: 18,
-    fontWeight: '400',
-    color: '#fff',
+    fontWeight: "400",
+    color: "#fff",
   },
 });
