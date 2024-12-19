@@ -2,15 +2,11 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
 export function Category(props) {
   return (
-    <TouchableOpacity 
-    activeOpacity={0.4} 
-    style={[styles.categoryContainer, props.style]}
-
-    onPress={() => props.onPress && props.onPress(props.categoryHeader)}
-
+    <TouchableOpacity
+      activeOpacity={0.4}
+      style={[styles.categoryContainer, props.style]}
+      onPress={() => props.onPress && props.onPress(props.categoryHeader)}
     >
-      
-      
       {/* Kategorien */}
       <View style={styles.categoryItem}>
         <Text style={styles.categoryHeader}>{props.categoryHeader}</Text>

@@ -21,9 +21,8 @@ export function CategoryDetailScreen({
 
   return (
     <View style={styles.container}>
-
-      <TouchableOpacity onPress={onBackPress } style={styles.backButton}>
-        <Text style={styles.backButtonText} >Zurück</Text>
+      <TouchableOpacity onPress={onBackPress} style={styles.backButton}>
+        <Text style={styles.backButtonText}>Zurück</Text>
       </TouchableOpacity>
 
       {/* Bild */}

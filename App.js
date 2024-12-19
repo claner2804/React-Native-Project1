@@ -19,7 +19,7 @@ export default function App() {
 
   function handleCategorySelection(category) {
     console.log(`Kategorie ${category.categoryHeader} (App.js ausgabe)`);
-    setSelectedCategory(category.categoryHeader);
+    setSelectedCategory(category);
 
     const index = categoriesData.findIndex((item) => {
       return item.categoryHeader === category.categoryHeader;

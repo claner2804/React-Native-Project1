@@ -7,7 +7,7 @@ import { Card } from "./components/Card";
 import { categoriesData } from "./data/Data";
 const { height } = Dimensions.get("window");
 
-export function BudgetPlannerScreen({onCategorySelect}) {
+export function BudgetPlannerScreen({ onCategorySelect }) {
   return (
     //Hauptcontainer der App
     <View style={styles.container}>
