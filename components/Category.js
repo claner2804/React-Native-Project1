@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row', // Kategorien nebeneinander
     justifyContent: 'space-between', // Abstand zwischen Kategorien
     alignItems: 'center',
-    marginTop: 20,
+    marginTop: 5,
   },
 
   // Vertikaler Container für eine einzelne Kategorie
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
 
   // Text für die Kategorie-Header (Einnahmen/Ausgaben/Ersparnisse)
   categoryHeader: {
-    fontSize: 12,
+    fontSize: 15,
     fontWeight: '400',
     color: '#4B0082',
     textAlign: 'center',
