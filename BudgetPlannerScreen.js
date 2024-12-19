@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
     //Bild
     image: {
       width: 300, // Setzt eine feste Breite
-      height: 250, // Setzt eine feste Höhe
+      height: 200, // Setzt eine feste Höhe
       resizeMode: "contain", // Bild an den Container anpassen
     },
   });

@@ -1,15 +1,32 @@
 
 import { StyleSheet, Text, View, Image, ScrollView, SafeAreaView } from "react-native";
 import { BudgetPlannerScreen } from "./BudgetPlannerScreen";
+import { CategoryDetailScreen } from "./CategoryDetailScreen";
+import { categoriesData } from "./data/Data";
 
-import { Dimensions } from "react-native";
-const { height } = Dimensions.get("window");
+// {
+//   id: 1,
+//   categoryHeader: "Einnahmen",
+//   percentageText: "80%",
+//   circleColor: "#9933FF",
+// },
+
+
 
 export default function App() {
   return (
 
     <SafeAreaView style={styles.screenContainer}>
-      <BudgetPlannerScreen />
+      {/* <BudgetPlannerScreen /> */}
+      <CategoryDetailScreen
+      
+      id={categoriesData[0].id}
+      categoryHeader={categoriesData[0].categoryHeader}
+      percentageText={categoriesData[0].percentageText}
+      circleColor={categoriesData[0].circleColor}
+      
+      />
+
     </SafeAreaView>
 
   );
