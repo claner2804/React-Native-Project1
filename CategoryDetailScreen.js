@@ -1,20 +1,22 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 
+import { categoriesData } from "./data/Data";
+
 export function CategoryDetailScreen({
   id,
   categoryHeader,
   percentageText,
   circleColor,
+  image,
+  details,
+  detailsTextColor,
   onBackPress,
 }) {
-  const incomeDetails = [
-    { id: 1, source: "Gehalt", amount: "1048 €" },
-    { id: 2, source: "Stipendium", amount: "1054 €" },
-    { id: 3, source: "Sonstige", amount: "12 €" },
-  ];
+
+
 
   // Gesamtsumme berechnen und sicherstellen, dass amount als Zahl behandelt wird
-  const totalIncome = incomeDetails.reduce(
+  const totalAmount = details.reduce(
     (sum, item) => sum + parseFloat(item.amount),
     0
   );
@@ -30,7 +32,7 @@ export function CategoryDetailScreen({
         <Image
           style={styles.image}
           source={{
-            uri: "https://cdn-icons-png.freepik.com/512/7458/7458229.png",
+            uri: image,
           }}
         />
       </View>
@@ -48,13 +50,20 @@ export function CategoryDetailScreen({
         <Text style={styles.percentageText}>{percentageText}</Text>
       </View>
 
-      {/* Einnahme-Aufschlüsselung */}
-      <View style={styles.incomeContainer}>
-        <Text style={styles.incomeTitle}>Einnahmen-Aufschlüsselung:</Text>
-        {incomeDetails.map((item) => (
-          <View key={item.id} style={styles.incomeItem}>
-            <Text style={styles.incomeSource}>{item.source}</Text>
-            <Text style={styles.incomeAmount}>{item.amount}</Text>
+      {/* Aufschlüsselung */}
+      <View style={styles.detailsContainer}>
+        <Text style={styles.detailsTitle}>{`${categoryHeader}-Aufschlüsselung`}</Text>
+        {details.map((item) => (
+          <View key={item.id} style={styles.detailsItem}>
+            <Text style={styles.detailsSource}>{item.source}</Text>
+            <Text
+              style={[
+                styles.detailsAmount,
+                { color: detailsTextColor }, // Dynamische Farbe anwenden
+              ]}
+            >
+              {item.amount}
+            </Text>
           </View>
         ))}
 
@@ -64,7 +73,12 @@ export function CategoryDetailScreen({
         {/* Gesamtsumme */}
         <View style={styles.totalContainer}>
           <Text style={styles.totalText}>Gesamteinnahmen:</Text>
-          <Text style={styles.totalAmount}>{`${totalIncome} €`}</Text>
+          <Text
+            style={[
+              styles.totalAmount,
+              { color: detailsTextColor }, // Dynamische Farbe für Gesamtsumme
+            ]}
+          >{`${totalAmount} €`}</Text>
         </View>
       </View>
     </View>
@@ -127,7 +141,7 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
 
-  incomeContainer: {
+  detailsContainer: {
     marginTop: 20,
     width: "90%",
     backgroundColor: "#fff",
@@ -139,27 +153,26 @@ const styles = StyleSheet.create({
     elevation: 2, // Für Android
   },
 
-  incomeTitle: {
+  detailsTitle: {
     fontSize: 20,
     fontWeight: "bold",
     color: "#4B0082",
     marginBottom: 10,
   },
 
-  incomeItem: {
+  detailsItem: {
     flexDirection: "row",
     justifyContent: "space-between",
     marginBottom: 10,
   },
 
-  incomeSource: {
+  detailsSource: {
     fontSize: 16,
     color: "#4B0082",
   },
 
-  incomeAmount: {
+  detailsAmount: {
     fontSize: 16,
-    color: "#26bbe3",
     fontWeight: "bold",
   },
 
@@ -182,7 +195,6 @@ const styles = StyleSheet.create({
 
   totalAmount: {
     fontSize: 18,
-    color: "#26bbe3",
     fontWeight: "bold",
   },
 });

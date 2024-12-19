@@ -42,6 +42,9 @@ export default function App() {
           categoryHeader={selectedCategory.categoryHeader}
           percentageText={selectedCategory.percentageText}
           circleColor={selectedCategory.circleColor}
+          image={selectedCategory.image}
+          details={selectedCategory.details} 
+          detailsTextColor={selectedCategory.detailsTextColor}
           onBackPress={handleBackPress}
         />
       )}
