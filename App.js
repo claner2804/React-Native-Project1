@@ -15,36 +15,31 @@ import { categoriesData } from "./data/Data";
 import { useState } from "react";
 
 export default function App() {
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
-const [selectedCategory, setSelectedCategory] = useState(null);
+  function handleCategorySelection(category) {
+    console.log(`Kategorie ${category.categoryHeader} (App.js ausgabe)`);
+    setSelectedCategory(category.categoryHeader);
 
-function handleCategorySelection(category) {
-  console.log(`Kategorie ${category.categoryHeader} (App.js ausgabe)`);
-  setSelectedCategory(category.categoryHeader);
+    const index = categoriesData.findIndex((item) => {
+      return item.categoryHeader === category.categoryHeader;
+    });
 
-  const index = categoriesData.findIndex((item) => {
-    return item.categoryHeader === category.categoryHeader;
-  });
-
-  setSelectedCategory(categoriesData[index]);
-}
+    setSelectedCategory(categoriesData[index]);
+  }
 
   return (
     <SafeAreaView style={styles.screenContainer}>
-
-      {
-        selectedCategory === null ?
-        <BudgetPlannerScreen onCategorySelect={handleCategorySelection} /> 
-        :  <CategoryDetailScreen
-      
-        id={categoriesData[0].id}
-        categoryHeader={categoriesData[0].categoryHeader}
-        percentageText={categoriesData[0].percentageText}
-        circleColor={categoriesData[0].circleColor}
-        
-        /> 
-      }
-     
+      {selectedCategory === null ? (
+        <BudgetPlannerScreen onCategorySelect={handleCategorySelection} />
+      ) : (
+        <CategoryDetailScreen
+          id={selectedCategory.id}
+          categoryHeader={selectedCategory.categoryHeader}
+          percentageText={selectedCategory.percentageText}
+          circleColor={selectedCategory.circleColor}
+        />
+      )}
     </SafeAreaView>
   );
 }
