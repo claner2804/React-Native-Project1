@@ -11,16 +11,17 @@ My first React Native App 💕
 
 Budget Planner App
 
-Modular and reusable components
-Dynamic component creation from data
-Custom components: Card, Category
-Props and useState for data and state management
-Horizontal ScrollView for category navigation
-Conditional rendering for dynamic views
-Screen navigation: main and detailed views
-Flexbox layouts for responsive design
-Dynamic and customized styling
-Image integration for categories
-Expandable for media like videos
-Third-party libraries for extended functionality
-Concepts: React Native basics, Flexbox, Props, State, Conditional Rendering, ScrollView, Navigation, Dynamic Components
+- Modular and reusable components  
+- Dynamic component creation from data  
+- Custom components: Card, Category  
+- Props and useState for data and state management  
+- Horizontal ScrollView for category navigation  
+- Conditional rendering for dynamic views  
+- Screen navigation: main and detailed views  
+- Flexbox layouts for responsive design  
+- Dynamic and customized styling  
+- Image integration for categories  
+- Expandable for media like videos  
+- Third-party libraries for extended functionality  
+- Concepts: React Native basics, Flexbox, Props, State, Conditional Rendering, ScrollView, Navigation, Dynamic Components  
+
