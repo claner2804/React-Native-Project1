@@ -1,2 +1,2 @@
 My first React Native App 💕
-<img width="357" alt="image" src="https://github.com/user-attachments/assets/9d171883-f758-4e9b-9f77-7433e362a85c" />
+<img width="357" alt="video" src="ScreenRecording_12-19-2024 20-28-51_1.MP4" />
